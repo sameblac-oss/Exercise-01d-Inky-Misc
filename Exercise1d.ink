@@ -15,25 +15,41 @@ This exercise will demonstrate the following in the example video:
 
 VAR time = 0 //  0 Morning, 1 Noon, 2 Night
 
-
-
-
 -> seashore
 
 == seashore ==
 You are sitting on the beach. 
+It is { advance_time() } 
 
-+ [Wait] -> seashore
++ [Stroll down the beach] -> beach2
+* [Touch the sand] -> sand
+* [Bask in sun] -> bask
 -> DONE
 
 == beach2 ==
 This is further down the beach.
+* [Take picture of dolphin] -> dolphin
 
-+ [Move back up the beach] -> seashore
+It is { advance_time() }
+* {time == 1} [Pick up some seashells] -> shells
++ [Stroll back up the beach] -> seashore
 
 == shells ==
-You pick up the shells
+You pick up the shells.
 -> beach2
+
+=== sand ===
+You touch the stand. It gives you a nostalgic feeling of childhood. You decide to build a sandcastle. 
+-> seashore
+
+=== dolphin ===
+You spot a dolphin in the distance. It magesticly dives in and out of the water. You take out your phone and snap a picture of it. 
+-> beach2
+
+=== bask ===
+You find a good place to bask in the sun. You let the sun's rays beam on your back to give you the perfect tan. 
+-> seashore
+
 
 == function advance_time ==
 
@@ -43,7 +59,7 @@ You pick up the shells
         - time > 2:
             ~ time = 0
     }    
-    /*
+    
     {    
         - time == 0:
             ~ return "Morning"
@@ -55,7 +71,7 @@ You pick up the shells
             ~ return "Night"
     
     }
-    */
+    
     
         
     ~ return time
