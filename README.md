@@ -1,5 +1,5 @@
 # Exercise-01d-Inky-Misc
 
-# Your Name
+# Sam Black
 
-# Your Github username
+# sameblac-oss
